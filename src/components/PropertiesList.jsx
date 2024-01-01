@@ -1,40 +1,32 @@
-import React from 'react'
-// import Room from './Room';
+import React from 'react';
 import Properties from './Properties.jsx';
-import Footer from './Footer'
-import MainBackground from "./MainBackground.jsx";
-import Banner from "./Banner.jsx";
-// export default function RoomsList({rooms}){
-export default function PropertiesList({rooms, onAddToFavourites,favourites}){
-    if (rooms.length === 0){
+
+export default function PropertiesList({ rooms, onAddToFavourites, favourites }) {
+    if (rooms.length === 0) {
         return (
             <>
                 <div className={'empty-search'}>
-                    <h3>no maching searach</h3>
+                    <h3>No matching search</h3>
                 </div>
-                <Footer/>
             </>
-
-        )
+        );
     }
 
-    return(
+    return (
         <>
-
-            <section className={'propertiesList'}>
-
-                <div className={'row roomsList-center'}>
-                    {rooms.map(item => (
-                        <div key={item.id} className="col-md-4 mb-3">
-                            {/*<Room room={item} />*/}
-                            <Properties room={item}
-                                        onAddToFavourites={() => onAddToFavourites(item)}
-                                        isFavourite={favourites.some((fav) => fav.id === item.id)}/>
+            <section className={'container propertiesList'}>
+                <div className={'row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4'}>
+                    {rooms.map((item) => (
+                        <div key={item.id} className="col mb-3">
+                            <Properties
+                                room={item}
+                                onAddToFavourites={() => onAddToFavourites(item)}
+                                isFavourite={favourites.some((fav) => fav.id === item.id)}
+                            />
                         </div>
                     ))}
                 </div>
             </section>
-            <Footer/>
         </>
-    )
+    );
 }

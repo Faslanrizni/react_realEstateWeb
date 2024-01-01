@@ -9,6 +9,7 @@ import ErrorPage from "./pages/ErrorPage";
 import ResulPage from "./pages/ResultPage";
 import SearchPage from "./pages/SearchPage";
 import SingleProperties from "./pages/singleProperties";
+import ContactForm from "./pages/ContactForm.jsx";
 
 import Navbar from './components/Navbar';
 import {Route} from 'react-router-dom';
@@ -35,6 +36,7 @@ function App() {
                     <Route  path={'/errorPage'} element={<ErrorPage />} />
                     <Route  path={'/searchPage'} element={ <SearchPage />} />
                     <Route  path={'/resultPage'} element={<ResulPage />} />
+                    <Route  path={'/ContactPage'} element={<ContactForm />} />
                     <Route  element={<ErrorPage />} />
                     {/*</Switch>*/}
                 </Routes>

@@ -1,45 +1,60 @@
-import React from 'react';
-import {useContext} from 'react';
-import {PropertyMain} from '../context';
+import React, { useContext } from 'react';
+import { PropertyMain } from '../context';
 
-/*===============get all uniqe values==============*/
+/*===============get all unique values==============*/
 
-const getUniqe = (items,value) =>{
-    return [...new Set(items.map(item =>item[value]))]
-}
+const getUnique = (items, value) => {
+    return [...new Set(items.map((item) => item[value]))];
+};
 
-/*===============get all uniqe values==============*/
+/*===============get all unique values==============*/
 
-export default function PropertiesFilter({rooms}){
+export default function PropertiesFilter({ rooms }) {
     const context = useContext(PropertyMain);
     // console.log(context)
     const {
-        handleChange,type,price,bedrooms,minPrice,maxPrice,
-        minBedrroms,maxBrdrooms,location,dateFilter
+        handleChange,
+        type,
+        price,
+        bedrooms,
+        minPrice,
+        maxPrice,
+        minBedrroms,
+        maxBrdrooms,
+        location,
+        dateFilter,
     } = context;
-    /*============get uniqu types============*/
-    let types = getUniqe(rooms,'type');
 
-    /*addding types*/
-    types = ['all',...types];
+    /*============get unique types============*/
+    let types = getUnique(rooms, 'type');
 
+    /*adding types*/
+    types = ['all', ...types];
 
     /*==========mapping to jsx========*/
-    types = types.map((item,index)=>{
-        return (<option value={item} key={index}> {item}</option>
-
+    types = types.map((item, index) => {
+        return (
+            <option value={item} key={index}>
+                {' '}
+                {item}
+            </option>
         );
     });
 
-    let bedroomNO = getUniqe(rooms,'bedrooms');
-    bedroomNO = bedroomNO.map((item,index)=>{
-        return (<option key={index} value={item}>{item}</option>)
-    })
-    return(
-        <section className={'filter-container'}>
-            <form className={'filter-form'}>
-                {/*==select type=*/}
+    let bedroomNO = getUnique(rooms, 'bedrooms');
+    bedroomNO = bedroomNO.map((item, index) => {
+        return (
+            <option key={index} value={item}>
+                {item}
+            </option>
+        );
+    });
 
+    return (
+        <section className={'container filter-container'}>
+
+            <form className={'filter-form getCenterForm'}>
+                {/*==select type=*/}
                 <div className="form-group">
                     <label htmlFor="type">Property type</label>
                     <select
@@ -54,8 +69,7 @@ export default function PropertiesFilter({rooms}){
                 </div>
                 {/*==select type=*/}
 
-                {/*==select for bedrrom nuumber type=*/}
-
+                {/*==select for bedroom number type=*/}
                 <div className="form-group">
                     <label htmlFor="bedrooms">Bedroom number</label>
                     <select
@@ -68,21 +82,21 @@ export default function PropertiesFilter({rooms}){
                         {bedroomNO}
                     </select>
                 </div>
-                {/*==select bedrrom nuumber type=*/}
-
-
+                {/*==select bedroom number type=*/}
                 {/*==============room price==========*/}
-
                 <div className="form-group">
-                    <label htmlFor="price">
-                        properti price ${price}
-                    </label>
-                    <input type="range" name={'price'} min={minPrice}
-                           max={maxPrice} id={'price'} value={price} onChange={handleChange}
-                           className={'form-control'}
+                    <label htmlFor="price">Property price ${price}</label>
+                    <input
+                        type="range"
+                        name={'price'}
+                        min={minPrice}
+                        max={maxPrice}
+                        id={'price'}
+                        value={price}
+                        onChange={handleChange}
+                        className={'form-control'}
                     />
                 </div>
-
                 {/*==============room price==========*/}
 
                 <div className="form-group">
@@ -96,9 +110,7 @@ export default function PropertiesFilter({rooms}){
                         className="form-control"
                     />
                 </div>
-
-
             </form>
         </section>
-    )
+    );
 }

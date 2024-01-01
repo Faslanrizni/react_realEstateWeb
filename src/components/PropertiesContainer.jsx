@@ -9,6 +9,7 @@ import Loading from './Loading';
 import favouritesList from "./FavouritesList.jsx";
 import PropertiesList from "./PropertiesList.jsx";
 import FavouritesList from "./FavouritesList.jsx";
+import Footer from "./Footer.jsx";
 
 function PropertiesContainer({context}){
     const {loading,sortedRooms,rooms} = context;
@@ -36,16 +37,18 @@ function PropertiesContainer({context}){
         <div>
 
             <PropertisFilter rooms={rooms}/>
+
+            <PropertiesList rooms={sortedRooms}
+                            onAddToFavourites={addToFavourites}
+                            favourites={favourites}
+            />
             <FavouritesList
                 favourites={favourites}
                 onAddToFavourites={addToFavourites}
                 onRemoveFromFavourites={removeFromFavourites}
                 onClearFavourites={clearFavourites}
             />
-            <PropertiesList rooms={sortedRooms}
-                            onAddToFavourites={addToFavourites}
-                            favourites={favourites}
-            />
+            <Footer/>
         </div>
     );
 

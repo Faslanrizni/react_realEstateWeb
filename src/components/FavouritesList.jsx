@@ -1,4 +1,3 @@
-// FavouritesList.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CiHeart } from 'react-icons/ci';
@@ -6,10 +5,17 @@ import { CiHeart } from 'react-icons/ci';
 export default function FavouritesList({ favourites, onRemoveFromFavourites }) {
     return (
         <section className="favourites-list">
-            <h2>Favourite Properties</h2>
-            <div className="row roomsList-center">
+            <div className="container favouriteList">
+                <div className="row">
+                    <div className="col text-center">
+                        <h2 className="FavouriteList">Favourite Properties</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 {favourites.map(item => (
-                    <div key={item.id} className="col-md-4 mb-3">
+                    <div key={item.id} className="col mb-3">
                         <article className="property">
                             <div className="card img-container" style={{ width: '18rem' }}>
                                 <img src={item.picture} className="card-img-top" alt="..." />
@@ -18,6 +24,7 @@ export default function FavouritesList({ favourites, onRemoveFromFavourites }) {
                                     <Link to={`/rooms/${item.tenure}`} className="btn btn-primary">
                                         Read More
                                     </Link>
+                                    <br />
                                     <br />
                                     <button
                                         onClick={() => onRemoveFromFavourites(item)}

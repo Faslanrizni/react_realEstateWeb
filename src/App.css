@@ -55,14 +55,7 @@
   height: 500px;
   width: 450px;
 }
-/*.featured-rooms{*/
-/*  border: 1px solid black;*/
-/*  !*height: 75%;*!*/
-/*  !*width: 65%;*!*/
-/*  box-shadow: 10px 5px 10px black;*/
-/*  display: flex;*/
-/*  justify-content: space-between;*/
-/*}*/
+
 .property img{
   width: 100%;
   height: 70%;
@@ -75,26 +68,13 @@
 .roomsList-center{
   padding-top: 100px;
 }
-/*.roomsList-center{
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fill,minmax(270px,1fr));
-  grid-row-gap: 2rem;
-  grid-column-gap: 30px;
-}*/
-/*
-.main{
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx6MIZHFw2FVP2vQkcSif2_rnYyd7EII6dAsBpk3qtT6k8WNrLEk_4FPDok-yCwozJjHc&usqp=CAU");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
-}*/
-/*
 .filter-container{
+  display: flex;
   width: 80%;
   justify-content: center;
   align-items: center;
-}*/
+}
 .FlexClass{
   justify-content: center;
   align-items: center;
@@ -109,20 +89,18 @@
   align-items: center;
   padding: 50px;
 }
-.filter-container{
+/*.filter-container{
   display: inline-block;
   color: blanchedalmond;
   background: rgba(0,0,0,0.5);
   padding:5px;
   text-align: center;
-  justify-content: center;
+  !*justify-content: center;*!
   align-items: center;
-  margin-top: -1000px;
-  margin-left: 700px;
-  margin-bottom: -1000px;
+  justify-content: space-between;
 
+}*/
 
-}
 .navbar-light{
   background-color: black;
   top: 0;
@@ -209,3 +187,121 @@
 .card-img-top{
   height: 300px;
 }
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  border: 1px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: lightsteelblue;
+  border-radius: 50px;
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.form-group {
+  margin-right: 10px;
+}
+/*=========Contact form=======*/
+.contact-section{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.info{
+  /*color: white;*/
+  max-width: 800px;
+  font-size: 20px;
+  line-height: 70px;
+  padding-left: 50px;
+}
+.info i{
+  font-size: 20px;
+  margin-right: 30px;
+}
+.formClass{
+  max-width: 700px;
+  /*width: 100%;*/
+  margin-right:  50px;
+}
+.info, .formClass{
+
+  flex: 1;
+}
+.formClass h2{
+  color: white;
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.formClass input:valid {
+  border-color: green;
+}
+
+.formClass input:invalid {
+  border-color: red;
+}
+textarea[name='message']{/*Attribute Selectors */
+  background: black;
+  color: white;
+  height: 50px;
+  border: none;
+  width: 80%;
+  border-radius: 8px;
+  resize:vertical;
+  padding: 15px;
+  font-size: 15px;
+  opacity: 0.9;
+  min-height: 200px;
+  max-height: 400px;
+  margin-bottom: 20px;
+}
+
+.formClass .text-box{
+  height: 20px;
+  padding: 15px;
+  color: white;
+  background: black;
+  border: none;
+  width: 80%;
+  font-size: 15px;
+  border-radius: 8px;
+  opacity: 0.9;
+  margin-bottom: 25px;
+
+}
+.contact .text-box:first-child{ /*Child combinator*/
+  margin-right: 15px;
+
+}
+.formClass .btn{
+  float: right;
+  background: orange;
+  color: white;
+  width: 120px;
+  height: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius:8px;
+  letter-spacing: 2px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition-property: background;
+}
+.contact .btn:hover{
+  background: #D35400;
+}
+
+
