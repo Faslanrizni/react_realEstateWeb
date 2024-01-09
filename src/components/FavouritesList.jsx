@@ -7,8 +7,9 @@ export default function FavouritesList({ favourites, onRemoveFromFavourites }) {
         <section className="favourites-list">
             <div className="container favouriteList">
                 <div className="row">
-                    <div className="col text-center">
+                    <div className="col text-center margin">
                         <h2 className="FavouriteList">Favourite Properties</h2>
+                        <p>Select Your Favourite Properties</p>
                     </div>
                 </div>
             </div>

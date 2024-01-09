@@ -219,14 +219,22 @@
   width: 100%;
   min-height: 100vh;
 }
-.info{
+.ContactInfo{
   /*color: white;*/
   max-width: 800px;
   font-size: 20px;
   line-height: 70px;
   padding-left: 50px;
+
+
 }
-.info i{
+.propertyInfo{
+  border: 1px solid black;
+  border-radius: 15px;
+  width: auto;
+
+}
+.ContactInfo i{
   font-size: 20px;
   margin-right: 30px;
 }
@@ -235,9 +243,13 @@
   /*width: 100%;*/
   margin-right:  50px;
 }
-.info, .formClass{
+.ContactInfo, .formClass{
 
   flex: 1;
+}
+.formInfo{
+  border-radius: 15px;
+
 }
 .formClass h2{
   color: white;
@@ -302,6 +314,29 @@ textarea[name='message']{/*Attribute Selectors */
 }
 .contact .btn:hover{
   background: #D35400;
+}
+/* Add this to your CSS or SCSS */
+.max-img-width {
+  max-width: 80%; /* Adjust the percentage based on your preference */
+  margin: auto; /* Center the image horizontally */
+}
+.right{
+  right: 0;
+}
+.margin{
+  margin-bottom: 50px;
+}
+.locationMap{
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 50px;
+  display: grid;
+
+
+}
+.navbar-nav{
+  padding-left:100px;
+  margin-left: 1150px;
 }
 
 

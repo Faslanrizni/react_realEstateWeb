@@ -1,39 +1,54 @@
-import {BrowserRouter as Router,Routes, Link, Route} from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import React from "react";
 
-const Navbar = () =>{
-    return(
+const Navbar = () => {
+    return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <div className="navbar-brand" >
-                        <img src="data:image/jpeg;base64,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"
-                             alt="" className={'logo'}/>
+                    <div className="ms-auto">
+                        <img
+                            src="data:image/jpeg;base64,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"
+                            alt=""
+                            className="logo"
+                        />
                     </div>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
+                    <div className="collapse navbar-collapse rightConner" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link className="nav-link" to={'/'}>Home</Link>
+                                <Link className="nav-link" to={"/"}>
+                                    Home
+                                </Link>
                             </li>
-                         {/*   <li className="nav-item">
+                            {/*   <li className="nav-item">
                                 <Link className="nav-link" to={'/rooms'}>Room</Link>
                             </li>*/}
+
+                          {/*  <li className="nav-item">
+                                <Link className="nav-link" to={"/searchPage"}>
+                                    Search for properties
+                                </Link>
+                            </li>*/}
                             <li className="nav-item">
-                                <Link className="nav-link" to={'/customer'}>Customer</Link>
+                                <Link className="nav-link" to={"/resultPage"}>
+                                    Result
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={'/searchPage'}>Search for properties</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to={'/resultPage'} >Result</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to={'/ContactPage'} >Contact Us</Link>
+                                <Link className="nav-link" to={"/ContactPage"}>
+                                    Contact Us
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -41,5 +56,6 @@ const Navbar = () =>{
             </nav>
         </>
     );
-}
+};
+
 export default Navbar;

@@ -8,25 +8,7 @@ export default function Properties({room, onAddToFavourites,isFavourite}){
 
     return(
         <article className={'property'}>
-            {/*<div className="img-container">
-                <img src={imagesArray[0] || ''} alt="properties" />
-                <img src={picture} alt="properties"/>
-                <div className="favourite">
-                    <CiHeart />
-                    Add to favourite
-                </div>
 
-
-                <div> {price} {type}</div>
-
-                <div className="price-top">
-                    <h6>${price} per month</h6>
-                </div>
-                <Link to={'#'} className={'btn btn-warning'}>Read More</Link>
-
-                <p className={'property-name'}>{type}</p>
-                <Link to={`/rooms/${tenure}`} className={'room-link'}>Reed More</Link>
-            </div>*/}
             <div className="card img-container" style={{ width: '18rem' }}>
                 <img src={picture} className="card-img-top" alt="..."/>
 

@@ -19,10 +19,11 @@ export default function PropertiesFilter({ rooms }) {
         bedrooms,
         minPrice,
         maxPrice,
-        minBedrroms,
+        minBedrooms,
         maxBrdrooms,
         location,
         dateFilter,
+        endDate
     } = context;
 
     /*============get unique types============*/
@@ -69,20 +70,37 @@ export default function PropertiesFilter({ rooms }) {
                 </div>
                 {/*==select type=*/}
 
-                {/*==select for bedroom number type=*/}
+                {/* == select for minBedrooms == */}
                 <div className="form-group">
-                    <label htmlFor="bedrooms">Bedroom number</label>
+                    <label htmlFor="minBedrooms">Min Bedrooms</label>
                     <select
-                        name="bedrooms"
-                        id="bedrooms"
-                        value={bedrooms}
+                        name="minBedrooms"
+                        id="minBedrooms"
+                        value={minBedrooms}
                         className={'form-control'}
                         onChange={handleChange}
                     >
                         {bedroomNO}
                     </select>
                 </div>
-                {/*==select bedroom number type=*/}
+                {/* == select for minBedrooms == */}
+
+                {/* == select for maxBedrooms == */}
+                <div className="form-group">
+                    <label htmlFor="maxBedrooms">Max Bedrooms</label>
+                    <select
+                        name="maxBedrooms"
+                        id="maxBedrooms"
+                        value={maxBrdrooms}
+                        className={'form-control'}
+                        onChange={handleChange}
+                    >
+                        {bedroomNO}
+                    </select>
+                </div>
+                {/* == select for maxBedrooms == */}
+
+
                 {/*==============room price==========*/}
                 <div className="form-group">
                     <label htmlFor="price">Property price ${price}</label>
@@ -108,6 +126,17 @@ export default function PropertiesFilter({ rooms }) {
                         value={dateFilter}
                         onChange={handleChange}
                         className="form-control"
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="location"> Location: </label>
+                    <input type="text"
+                           name={'location'}
+                           id={'location'}
+                           value={location}
+                           onChange={handleChange}
+                           className={'form-control'}
                     />
                 </div>
             </form>

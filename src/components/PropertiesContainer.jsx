@@ -55,34 +55,4 @@ function PropertiesContainer({context}){
 }
 export default withRoomConsumer(PropertiesContainer)
 
-/*
-import React from 'react';
-import RoomsFilter from './RoomFilter'
-import RoomsList from './RoomsList';
-import {RoomConsumer} from '../context';
-import Loading from './Loading';
-export default function RoomContainer(){
-    return(
-        <RoomConsumer>
-            {
-                (value) =>{
-                    console.log(value)
-                    const {loading,sorterdRooms,rooms} = value
-                    if (loading){
-                        return <Loading/>
-                    }
-                    return(
-                        <div>
-                            HELLO ROOM
-                            <RoomsFilter rooms={rooms}/>
-                            <RoomsList rooms={sorterdRooms}/>
-                        </div>
-                    );
 
-                }
-
-            }
-            </RoomConsumer>
-
-    )
-}*/

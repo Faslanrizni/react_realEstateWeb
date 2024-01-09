@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 /*import imageScrollBar from '../components/imageScrollbar';*/
 import MainBackground from "../components/MainBackground.jsx";
 import Banner from "../components/Banner.jsx";
+import FeaturedProperties from "../components/featuredProperties.jsx";
 export default function Home(){
 
 
@@ -17,21 +18,8 @@ export default function Home(){
                 <Banner title={'Main Page'} subTitle={'rem Ipsum is simply dummy . Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an maIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essent'}>
                 </Banner>
             </MainBackground>
-            {/*   <ImageScrollbar images={images}>*/}
-           {/* <section className={'section'}>
-                <div className="container home-container">
-                    <div className="row">
-                        <div className="col-md-12 text-center ">
-                            <h3 className="main-heading">Homes for sale – find your next move with us</h3>
-                            <div className="card-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem dolorem doloremque excepturi fugiat id illum in inventore, ipsa labore nam nemo nisi omnis pariatur quas sapiente, sed temporibus voluptatem.
-                            </div>
-                            <Link to={'#'} className={'btn btn-warning'}>Read More</Link>
 
-                        </div>
-                    </div>
-                </div>
-            </section>*/}
+
             <section className={'section'}>
                 <div className="container">
                     <div className="row">
@@ -75,6 +63,7 @@ export default function Home(){
                     </div>
                 </div>
             </section>
+            <FeaturedProperties/>
             <Footer />
 
 

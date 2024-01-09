@@ -42,10 +42,10 @@ const contactForm = () =>{
 
             </div>
             <div className="contact-section">
-                <div className="info">
+                <div className="ContactInfo">
                     <img src="https://img.freepik.com/free-photo/villa-house-model-key-drawing-retro-desktop-real-estate-sale-concept_1387-310.jpg?size=626&ext=jpg&ga=GA1.1.1313303609.1697107729&semt=sph" alt=""/>
                 </div>
-                <div className="formClass">
+                <div className="formClass formInfo">
                     <form className="contact" action="" method="post">
                         <input type="text" name="name" className="text-box" placeholder="Name" required />
                         <input type="email" name="email" className="text-box" placeholder="email" required />
