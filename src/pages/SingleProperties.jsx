@@ -23,12 +23,15 @@ export default function SingleProperties() {
     return (
         <>
 
-            <div className="container-fluid im setWidth">
-                <div className="row slider" >
+            <div className="container-fluid px-0">
+                <div className="row">
+                    <div className="col">
                         <ImageSlider images={imagesArray} />
-
+                    </div>
                 </div>
             </div>
+
+
             <section className={'single-property'}>
                 <div className={'container-fluid justify-content-center'}>
                     <div className="row">
