@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { CiHeart } from "react-icons/ci";
 // export default function Room({room}){
 export default function Properties({room, onAddToFavourites,isFavourite}){
-    const {type,price,picture,images,tenure} = room;
+    const {type,price,picture,images,tenure,bedrooms} = room;
     // const imagesArray = Array.isArray(images) ? images : (picture ? [picture] : []);
 
     return(
@@ -30,7 +30,7 @@ export default function Properties({room, onAddToFavourites,isFavourite}){
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">{type}</li>
                         <li className="list-group-item">${price} per month</li>
-                        <li className="list-group-item">A third item</li>
+                        <li className="list-group-item">bedroom no: {bedrooms}</li>
                     </ul>
 
             </div>

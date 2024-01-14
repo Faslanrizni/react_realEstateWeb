@@ -49,7 +49,7 @@ class PropertyProvider extends Component {
             let imagesMain = item.fields.picture;
             let images = item.images;
             let addedYear = item.fields.year;
-            let addedMonth = parseInt(item.fields.month) - 1; // Convert to 0-based index
+            let addedMonth = parseInt(item.fields.month) ; // Convert to 0-based index
             let addedDate = item.fields.day;
             let room = { ...item.fields, imagesMain, id, images, addedDate, addedMonth, addedYear };
             return room;
@@ -94,7 +94,10 @@ class PropertyProvider extends Component {
         minBedrooms = parseInt(minBedrooms);
         maxBedrooms = parseInt(maxBedrooms);
         tempRooms = tempRooms.filter(
-            (room) => room.bedrooms >= minBedrooms && room.bedrooms <= maxBedrooms
+            (room) => {
+                const roomBedrooms = parseInt(room.bedrooms);
+                return roomBedrooms >= minBedrooms && roomBedrooms <= maxBedrooms;
+            }
         );
         /*===============filter by min bedroom and max bedroom no==========*/
 
@@ -116,7 +119,7 @@ class PropertyProvider extends Component {
             tempRooms = tempRooms.filter((room) => {
                 if (room.addedYear !== undefined && room.addedMonth !== undefined && room.addedDate !== undefined) {
                     // Subtract 1 from room.addedMonth to match JavaScript's zero-based month representation
-                    const addedDate = new Date(room.addedYear, room.addedMonth - 1, room.addedDate);
+                    const addedDate = new Date(room.addedYear, room.addedMonth , room.addedDate);
 
                     const filterDate = new Date(dateFilter);
                     if (isNaN(filterDate.getTime())) {
