@@ -39,7 +39,10 @@ class PropertyProvider extends Component {
             maxPrice,
             maxBedrooms,
         });
+        // Save the rooms to local storage
+        localStorage.setItem('propertyList', JSON.stringify(rooms));
     }
+
 
     formatData(data) {
         let itemsArray = Array.isArray(data.properties) ? data.properties : [];
@@ -49,7 +52,7 @@ class PropertyProvider extends Component {
             let imagesMain = item.fields.picture;
             let images = item.images;
             let addedYear = item.fields.year;
-            let addedMonth = parseInt(item.fields.month) ; // Convert to 0-based index
+            let addedMonth = parseInt(item.fields.month) /*- 1*/; // Convert to 0-based index
             let addedDate = item.fields.day;
             let room = { ...item.fields, imagesMain, id, images, addedDate, addedMonth, addedYear };
             return room;
@@ -86,7 +89,7 @@ class PropertyProvider extends Component {
             dateFilter,
             location,
         } = this.state;
-/* By destructuring properties from this.state can easily access them within the function without having to use this.state.propertyName every time*/
+        /* By destructuring properties from this.state can easily access them within the function without having to use this.state.propertyName every time*/
         let tempRooms = [...rooms];
 
 
@@ -94,10 +97,14 @@ class PropertyProvider extends Component {
         minBedrooms = parseInt(minBedrooms);
         maxBedrooms = parseInt(maxBedrooms);
         tempRooms = tempRooms.filter(
-            (room) => {
+            /*(room) => room.bedrooms >= minBedrooms && room.bedrooms <= maxBedrooms*/
+            (room) =>{
                 const roomBedrooms = parseInt(room.bedrooms);
                 return roomBedrooms >= minBedrooms && roomBedrooms <= maxBedrooms;
             }
+
+
+
         );
         /*===============filter by min bedroom and max bedroom no==========*/
 

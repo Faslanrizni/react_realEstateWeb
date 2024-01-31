@@ -20,7 +20,7 @@ export default function PropertiesFilter({ rooms }) {
         minPrice,
         maxPrice,
         minBedrooms,
-        maxBedrooms,
+        maxBrdrooms,
         location,
         dateFilter,
         endDate
@@ -91,7 +91,7 @@ export default function PropertiesFilter({ rooms }) {
                     <select
                         name="maxBedrooms"
                         id="maxBedrooms"
-                        value={maxBedrooms}
+                        value={maxBrdrooms}
                         className={'form-control'}
                         onChange={handleChange}
                     >
