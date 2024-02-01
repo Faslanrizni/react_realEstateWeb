@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
 
 import PropertisFilter from './PropertiesFilter.jsx'
@@ -14,19 +14,37 @@ import Footer from "./Footer.jsx";
 function PropertiesContainer({context}){
     const {loading,sortedRooms,rooms} = context;
     const [favourites, setFavourites] = useState([]);
+
+    // Fetch favorite properties from local storage when the component is mounted
+    useEffect(() => {
+        try {
+            const storedFavourites = JSON.parse(localStorage.getItem('favourites')) || [];
+            setFavourites(storedFavourites);
+        } catch (error) {
+            console.error('Error accessing local storage:', error);
+        }
+    }, []);
+
+    const updateLocalStorage = (updatedFavourites) => {
+        localStorage.setItem('favourites', JSON.stringify(updatedFavourites));
+    };
     const addToFavourites = property => {
         if (!favourites.find(fav => fav.id === property.id)) {
-            setFavourites([...favourites, property]);
+            const updatedFavourites = [...favourites, property];
+            setFavourites(updatedFavourites);
+            updateLocalStorage(updatedFavourites);
         }
     };
 
     const removeFromFavourites = property => {
-        const updatedFavourites = favourites.filter(fav => fav.id !== property.id);
+        const updatedFavourites = favourites.filter((fav) => fav.id !== property.id);
         setFavourites(updatedFavourites);
+        updateLocalStorage(updatedFavourites);
     };
 
     const clearFavourites = () => {
         setFavourites([]);
+        updateLocalStorage([]);
     };
 
 
